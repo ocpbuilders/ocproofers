@@ -52,8 +52,18 @@
     nav a { font-size: 15px; font-weight: 500; padding: 8px 12px; border-radius: 6px; }
     nav a:hover { background: var(--cream); }
     nav a.on { background: var(--taupe); font-weight: 600; }
-    .end { display: flex; align-items: center; gap: 12px; justify-content: flex-end; }
-    .flag { width: 36px; height: 24px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0,0,0,.08); }
+    .end { display: flex; align-items: center; gap: 14px; justify-content: flex-end; }
+    .place {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+      white-space: nowrap; color: var(--ink);
+    }
+    .place:hover { color: var(--muted); }
+    .flag { width: 36px; height: 24px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0,0,0,.08); flex-shrink: 0; }
+    .menu-btn {
+      display: none; border: 1px solid var(--line); background: #fff;
+      padding: 8px 12px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;
+    }
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
       font-size: 15px; font-weight: 600; padding: 11px 18px;
@@ -70,7 +80,6 @@
     }
 
     .mono { background: var(--taupe); border-bottom: 1px solid var(--line); padding: 10px 16px; text-align: center; font-size: 14px; }
-
     .hero { display: grid; grid-template-columns: minmax(280px, 0.9fr) 1.15fr; min-height: 440px; }
     .copy { padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; }
     .kicker { font-size: 18px; font-weight: 600; color: var(--muted); margin-bottom: 8px; }
@@ -113,10 +122,10 @@
     .ghost { font-size: 48px; font-weight: 800; color: var(--ink); opacity: 0.08; line-height: 1; }
     .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
     .slot { border: 1px solid var(--line); background: var(--paper); }
-    .slot img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
     .slot figcaption { padding: 12px 16px; font-size: 14px; }
     .cities { display: flex; flex-wrap: wrap; gap: 8px; }
-    .cities span { border: 1px solid var(--line); padding: 6px 12px; border-radius: 6px; font-size: 14px; }
+    .cities a, .cities span { border: 1px solid var(--line); padding: 6px 12px; border-radius: 6px; font-size: 14px; }
+    .cities a:hover { background: var(--taupe); }
 
     footer { border-top: 1px solid var(--line); padding: 28px 24px 40px; font-size: 14px; color: var(--muted); }
     .foot { width: min(1280px, 100%); margin: 0 auto; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
@@ -124,8 +133,14 @@
     .flinks { display: flex; gap: 14px; flex-wrap: wrap; }
 
     @media (max-width: 980px) {
-      .bar { width: calc(100% - 32px); grid-template-columns: 1fr auto; }
+      .bar { width: calc(100% - 32px); grid-template-columns: 1fr auto auto; }
+      .menu-btn { display: inline-flex; }
       nav { display: none; }
+      nav.open {
+        display: flex; flex-direction: column; grid-column: 1 / -1;
+        padding: 8px 0 16px; align-items: stretch;
+      }
+      nav.open a { padding: 12px; }
       .hero { grid-template-columns: 1fr; }
       .copy { padding: 36px 20px 24px; }
       .photo { min-height: 260px; }
@@ -137,39 +152,43 @@
     @media (max-width: 620px) {
       .row, .four, .projects { grid-template-columns: 1fr; }
       h1 { font-size: 52px; }
+      .place span { display: none; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="bar">
-      <a class="brand" href="#top">
+      <a class="brand" href="index.html">
         <img src="ocp-mark.png" alt="OCP" onerror="this.onerror=null;this.src='ocp-mark.png.png'">
         <span>
           <strong>Roofing</strong>
           <small>A division of OCP Builders</small>
         </span>
       </a>
-      <nav>
-        <a class="on" href="#top">Residential</a>
-        <a href="#commercial">Commercial</a>
-        <a href="#systems">Services</a>
-        <a href="#about">About</a>
-        <a href="#area">Phoenix</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav">
+        <a class="on" href="index.html">Residential</a>
+        <a href="commercial.html">Commercial</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
       </nav>
       <div class="end">
-        <svg class="flag" viewBox="0 0 120 80" aria-label="Arizona flag" role="img">
-          <rect width="120" height="80" fill="#1c2b4a"/>
-          <polygon fill="#a1291e" points="60,40 0,40 0,0"/>
-          <polygon fill="#f0a728" points="60,40 0,0 20,0"/>
-          <polygon fill="#a1291e" points="60,40 20,0 40,0"/>
-          <polygon fill="#f0a728" points="60,40 40,0 60,0"/>
-          <polygon fill="#a1291e" points="60,40 60,0 80,0"/>
-          <polygon fill="#f0a728" points="60,40 80,0 100,0"/>
-          <polygon fill="#a1291e" points="60,40 100,0 120,0"/>
-          <polygon fill="#f0a728" points="60,40 120,0 120,40"/>
-          <path d="M60 26 l4.7 14.5h15.3l-12.4 9 4.7 14.5-12.3-9-12.3 9 4.7-14.5-12.4-9h15.3Z" fill="#b3742a"/>
-        </svg>
+        <a class="place" href="phoenix.html">
+          <svg class="flag" viewBox="0 0 120 80" aria-hidden="true">
+            <rect width="120" height="80" fill="#1c2b4a"/>
+            <polygon fill="#a1291e" points="60,40 0,40 0,0"/>
+            <polygon fill="#f0a728" points="60,40 0,0 20,0"/>
+            <polygon fill="#a1291e" points="60,40 20,0 40,0"/>
+            <polygon fill="#f0a728" points="60,40 40,0 60,0"/>
+            <polygon fill="#a1291e" points="60,40 60,0 80,0"/>
+            <polygon fill="#f0a728" points="60,40 80,0 100,0"/>
+            <polygon fill="#a1291e" points="60,40 100,0 120,0"/>
+            <polygon fill="#f0a728" points="60,40 120,0 120,40"/>
+            <path d="M60 26 l4.7 14.5h15.3l-12.4 9 4.7 14.5-12.3-9-12.3 9 4.7-14.5-12.4-9h15.3Z" fill="#b3742a"/>
+          </svg>
+          <span>Phoenix</span>
+        </a>
         <a class="btn btn-line" href="#estimate">Get Estimate</a>
       </div>
     </div>
@@ -250,20 +269,21 @@
     </div>
   </section>
 
-  <section class="block" id="about">
+  <section class="block">
     <div class="wrap">
       <h2>A roofing division, not a storm crew.</h2>
       <p>OCP Roofing is a division of <a href="https://ocpbuilders.com" target="_blank" rel="noopener">OCP Builders</a>. We work out of central Phoenix. Licensed, bonded, and insured.</p>
       <p>We keep pricing honest. You get a written number for a written scope. We keep the price competitive and on paper. No surprise extras after you approve the scope.</p>
       <p>If our work fails, or we missed something we should have seen, we come back and make it right. That is the warranty: our labor, the scope we signed, no runaround. Manufacturer material warranties stay with the product.</p>
+      <p><a class="btn btn-line" href="about.html">About OCP Roofing</a></p>
     </div>
   </section>
 
-  <section class="block band" id="commercial">
+  <section class="block band">
     <div class="wrap">
       <h2>Commercial is the second door.</h2>
       <p>KB-1 Dual Building Contractor. Leaks, coatings, low-slope, metal, reroof, and roofs on buildings we are already constructing. Same written price. Same crew that comes back.</p>
-      <p><a class="btn btn-navy" href="#estimate">Get a commercial estimate</a></p>
+      <p><a class="btn btn-navy" href="commercial.html">Get a commercial estimate</a></p>
     </div>
   </section>
 
@@ -272,7 +292,6 @@
       <h2>What happens next</h2>
       <p>We read the form. We call. We set the inspection. You get photos and a written number before anyone pulls a shingle.</p>
       <p>Leaks: say so on the form. We will tell you if it is next morning or same day.</p>
-      <p>If it is actively leaking, write “leak” on the form. We will tell you same day or next morning before we hang up.</p>
     </div>
   </section>
 
@@ -288,12 +307,12 @@
     </div>
   </section>
 
-  <section class="block" id="area">
+  <section class="block">
     <div class="wrap">
       <h2>Based in central Phoenix. We run the Valley.</h2>
       <p>Greater Phoenix, Maricopa, and Casa Grande.</p>
       <div class="cities">
-        <span>Phoenix</span><span>Tempe</span><span>Mesa</span><span>Chandler</span><span>Gilbert</span><span>Scottsdale</span><span>Glendale</span><span>Peoria</span><span>Surprise</span><span>Goodyear</span><span>Avondale</span><span>Buckeye</span><span>Queen Creek</span><span>Tolleson</span><span>Laveen</span><span>Ahwatukee</span><span>Maricopa</span><span>Casa Grande</span>
+        <a href="phoenix.html">Phoenix</a><a href="phoenix.html">Tempe</a><a href="phoenix.html">Mesa</a><a href="phoenix.html">Chandler</a><a href="phoenix.html">Gilbert</a><a href="phoenix.html">Scottsdale</a><a href="phoenix.html">Glendale</a><a href="phoenix.html">Peoria</a><a href="phoenix.html">Surprise</a><a href="phoenix.html">Goodyear</a><a href="phoenix.html">Avondale</a><a href="phoenix.html">Buckeye</a><a href="phoenix.html">Queen Creek</a><a href="phoenix.html">Tolleson</a><a href="phoenix.html">Laveen</a><a href="phoenix.html">Ahwatukee</a><a href="phoenix.html">Maricopa</a><a href="phoenix.html">Casa Grande</a>
       </div>
     </div>
   </section>
@@ -303,14 +322,14 @@
       <div>
         OCP Roofing is a division of <a href="https://ocpbuilders.com" target="_blank" rel="noopener">OCP Builders</a>.<br>
         Licensed, Bonded &amp; Insured.<br>
-        Central Phoenix.<br>
-        Privacy and terms will live here. Until those pages exist, we only use what you send to call you back about the roof.
+        Central Phoenix.
       </div>
       <div class="flinks">
-        <a href="#top">Residential</a>
-        <a href="#commercial">Commercial</a>
-        <a href="#systems">Services</a>
-        <a href="#about">About</a>
+        <a href="index.html">Residential</a>
+        <a href="commercial.html">Commercial</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="phoenix.html">Phoenix</a>
         <a href="#estimate">Estimate</a>
         <a href="https://ocpbuilders.com" target="_blank" rel="noopener">ocpbuilders.com</a>
       </div>
@@ -318,6 +337,14 @@
   </footer>
 
   <script>
+    var menu = document.querySelector(".menu-btn");
+    var nav = document.getElementById("nav");
+    if (menu && nav) {
+      menu.addEventListener("click", function () {
+        var open = nav.classList.toggle("open");
+        menu.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
     document.querySelectorAll(".sys").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var sel = document.getElementById("roof-type");
