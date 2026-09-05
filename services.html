@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roofing Services | OCP Roofing Phoenix</title>
+  <meta name="description" content="Shingle, tile, foam, and metal roofing in Phoenix. Valley rules. Written price. OCP Roofing, a division of OCP Builders.">
+  <link rel="icon" href="FAVICON.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #171611;
+      --paper: #ffffff;
+      --cream: #f5f3f0;
+      --taupe: #e8e4de;
+      --taupe-btn: #ddd8d1;
+      --taupe-hover: #d1cbc3;
+      --muted: #5a5753;
+      --line: #d5d0ca;
+      --navy: #1c2b4a;
+      --navy-dark: #141f36;
+      --flag-red: #a1291e;
+      --flag-gold: #f0a728;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: Inter, Aptos, "Segoe UI", Arial, sans-serif;
+      color: var(--ink); background: var(--paper); line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { font-family: Manrope, Inter, sans-serif; letter-spacing: -0.02em; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; color: inherit; }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+    header { background: var(--paper); position: sticky; top: 0; z-index: 40; }
+    .bar {
+      width: min(1280px, calc(100% - 48px));
+      margin: 0 auto; min-height: 76px;
+      display: grid; grid-template-columns: auto 1fr auto;
+      align-items: center; column-gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand img { height: 40px; width: 40px; object-fit: cover; border-radius: 3px; }
+    .brand strong { display: block; font-size: 26px; font-weight: 800; line-height: 1; }
+    .brand small { display: block; font-size: 11px; color: var(--muted); margin-top: 4px; }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px; }
+    nav a { font-size: 15px; font-weight: 500; padding: 8px 12px; border-radius: 6px; }
+    nav a:hover { background: var(--cream); }
+    nav a.on { background: var(--taupe); font-weight: 600; }
+    .end { display: flex; align-items: center; gap: 12px; justify-content: flex-end; }
+    .flag { width: 36px; height: 24px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0,0,0,.08); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 600; padding: 11px 18px;
+      border-radius: 6px; border: 0; cursor: pointer; white-space: nowrap;
+    }
+    .btn-taupe { background: var(--taupe-btn); }
+    .btn-taupe:hover { background: var(--taupe-hover); }
+    .btn-line { background: var(--paper); border: 1px solid var(--line); }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-navy:hover { background: var(--navy-dark); }
+    .stripe {
+      height: 5px;
+      background: linear-gradient(90deg, var(--flag-red) 0 33.33%, var(--flag-gold) 33.33% 66.66%, var(--navy) 66.66% 100%);
+    }
+
+    .intro { width: min(800px, calc(100% - 48px)); margin: 0 auto; padding: 64px 0 48px; }
+    .kicker { font-size: 16px; font-weight: 600; color: var(--muted); margin-bottom: 10px; }
+    h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; line-height: 1.05; }
+    h1::after { content: ""; display: block; width: 28%; height: 3px; background: var(--ink); margin-top: 14px; }
+    .lead { font-size: 18px; color: var(--muted); margin-top: 20px; max-width: 640px; }
+    .jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .jump a { border: 1px solid var(--line); padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+    .jump a:hover { background: var(--taupe); }
+
+    .sys { display: grid; grid-template-columns: 1.05fr 1fr; min-height: 360px; }
+    .sys.flip .copy { order: 2; }
+    .sys .pic { min-height: 280px; background: var(--taupe) center/cover no-repeat; }
+    .sys .copy { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+    .band { background: var(--taupe); }
+    .sys h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+    .sys .blurb { color: var(--muted); margin-bottom: 18px; max-width: 480px; }
+    .sys ul { list-style: none; }
+    .sys li { border-left: 2px solid var(--ink); padding: 4px 0 4px 12px; margin-bottom: 8px; font-size: 15px; }
+    .sys .btn { margin-top: 22px; align-self: flex-start; }
+
+    .estimate { width: min(1280px, calc(100% - 48px)); margin: 0 auto; padding: 56px 0 72px; }
+    .eg { display: grid; grid-template-columns: 260px 1fr; gap: 32px; align-items: start; }
+    .estimate h2 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+    .hint { color: var(--muted); font-size: 15px; }
+    form { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    input, select {
+      border: 1px solid var(--line); background: #fff; padding: 13px 14px;
+      font-size: 15px; border-radius: 6px; min-width: 150px; flex: 1;
+    }
+    .note { margin-top: 12px; font-size: 13px; color: var(--muted); }
+    .ok, .fail { display: none; margin-top: 12px; padding: 14px; background: var(--taupe); border-radius: 6px; }
+    .ok.show, .fail.show { display: block; }
+    label.check { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 24px 40px; font-size: 14px; color: var(--muted); }
+    .foot { width: min(1280px, 100%); margin: 0 auto; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    footer a { text-decoration: underline; text-underline-offset: 3px; }
+    .flinks { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    @media (max-width: 980px) {
+      .bar { width: calc(100% - 32px); grid-template-columns: 1fr auto; }
+      nav { display: none; }
+      .sys, .sys.flip { grid-template-columns: 1fr; }
+      .sys.flip .copy { order: 0; }
+      .sys .copy { padding: 32px 20px; }
+      .eg { grid-template-columns: 1fr; }
+      .estimate { width: calc(100% - 40px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <a class="brand" href="index.html">
+        <img src="ocp-mark.png" alt="OCP" onerror="this.onerror=null;this.src='ocp-mark.png.png'">
+        <span>
+          <strong>Roofing</strong>
+          <small>A division of OCP Builders</small>
+        </span>
+      </a>
+      <nav>
+        <a href="index.html">Residential</a>
+        <a href="commercial.html">Commercial</a>
+        <a class="on" href="services.html">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#area">Phoenix</a>
+      </nav>
+      <div class="end">
+        <svg class="flag" viewBox="0 0 120 80" aria-label="Arizona flag" role="img">
+          <rect width="120" height="80" fill="#1c2b4a"/>
+          <polygon fill="#a1291e" points="60,40 0,40 0,0"/>
+          <polygon fill="#f0a728" points="60,40 0,0 20,0"/>
+          <polygon fill="#a1291e" points="60,40 20,0 40,0"/>
+          <polygon fill="#f0a728" points="60,40 40,0 60,0"/>
+          <polygon fill="#a1291e" points="60,40 60,0 80,0"/>
+          <polygon fill="#f0a728" points="60,40 80,0 100,0"/>
+          <polygon fill="#a1291e" points="60,40 100,0 120,0"/>
+          <polygon fill="#f0a728" points="60,40 120,0 120,40"/>
+          <path d="M60 26 l4.7 14.5h15.3l-12.4 9 4.7 14.5-12.3-9-12.3 9 4.7-14.5-12.4-9h15.3Z" fill="#b3742a"/>
+        </svg>
+        <a class="btn btn-line" href="#estimate">Get Estimate</a>
+      </div>
+    </div>
+    <div class="stripe"></div>
+  </header>
+
+  <section class="intro">
+    <div class="kicker">Services</div>
+    <h1>Four systems. Valley rules.</h1>
+    <p class="lead">Phoenix is not a Midwest roof. UV, monsoon, and 115° days decide what fails. We spec for that, not a brochure from somewhere else.</p>
+    <div class="jump">
+      <a href="#shingle">Shingle</a>
+      <a href="#tile">Tile</a>
+      <a href="#foam">Foam</a>
+      <a href="#metal">Metal</a>
+    </div>
+  </section>
+
+  <section class="sys band" id="shingle">
+    <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?auto=format&fit=crop&w=1400&q=80')"></div>
+    <div class="copy">
+      <h2>Shingle</h2>
+      <p class="blurb">Inspect after storms and around year 10–15. Replace when tabs curl, granules are gone, or leaks stack up.</p>
+      <ul>
+        <li>South and west slopes cook first in the Valley.</li>
+        <li>Granule loss in the gutters is a clock, not a maybe.</li>
+        <li>Flashing at chimneys and pipes fails before the field.</li>
+      </ul>
+      <a class="btn btn-navy" href="#estimate" data-type="Shingle">Estimate this roof</a>
+    </div>
+  </section>
+
+  <section class="sys flip" id="tile">
+    <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1400&q=80')"></div>
+    <div class="copy">
+      <h2>Tile</h2>
+      <p class="blurb">The tile lasts. The felt under it does not. Most Valley jobs are a re-felt, not a pretty tear-off.</p>
+      <ul>
+        <li>Walk it wrong and you break tile. We walk it right.</li>
+        <li>Underlayment is the actual roof. Tile is the armor.</li>
+        <li>Broken pans at hips and valleys are where water goes.</li>
+      </ul>
+      <a class="btn btn-navy" href="#estimate" data-type="Tile">Estimate this roof</a>
+    </div>
+  </section>
+
+  <section class="sys band" id="foam">
+    <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80')"></div>
+    <div class="copy">
+      <h2>Foam</h2>
+      <p class="blurb">Recoat when it chalks. Inspect after monsoon, before it is a tear-off.</p>
+      <ul>
+        <li>UV chalks the coating. Recoat beats a tear-off.</li>
+        <li>Ponding after monsoon is the tell.</li>
+        <li>Cuts, splits, and open flashings show up as stains inside.</li>
+      </ul>
+      <a class="btn btn-navy" href="#estimate" data-type="Foam">Estimate this roof</a>
+    </div>
+  </section>
+
+  <section class="sys flip" id="metal">
+    <div class="pic" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80')"></div>
+    <div class="copy">
+      <h2>Metal</h2>
+      <p class="blurb">It leaks at flashing and screws, not in the middle.</p>
+      <ul>
+        <li>Panels are rarely the leak. Fasteners and flashings are.</li>
+        <li>Expansion in 115° heat walks screws loose.</li>
+        <li>Wall transitions and skylights are the usual path in.</li>
+      </ul>
+      <a class="btn btn-navy" href="#estimate" data-type="Metal">Estimate this roof</a>
+    </div>
+  </section>
+
+  <section class="estimate" id="estimate">
+    <div class="eg">
+      <div>
+        <h2>Get Your Estimate</h2>
+        <p class="hint">Name, phone, email, roof type. We call you back with a written price.</p>
+      </div>
+      <form id="lead" novalidate>
+        <input type="text" name="name" placeholder="Full Name" autocomplete="name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" required>
+        <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+        <select name="type" id="roof-type" required>
+          <option value="" selected disabled>Roofing Type</option>
+          <option>Shingle</option>
+          <option>Tile</option>
+          <option>Foam</option>
+          <option>Metal</option>
+          <option>Not sure</option>
+        </select>
+        <label class="check"><input type="checkbox" name="leak"> Actively leaking</label>
+        <button class="btn btn-navy" type="submit">Get Estimate</button>
+      </form>
+    </div>
+    <p class="note">No fee to inspect. We don’t start work without a written scope you approved.</p>
+    <div class="ok" id="ok">Got it. We will call you back about the roof.</div>
+    <div class="fail" id="fail"></div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <div>
+        OCP Roofing is a division of <a href="https://ocpbuilders.com" target="_blank" rel="noopener">OCP Builders</a>.<br>
+        Licensed, Bonded &amp; Insured.<br>
+        Central Phoenix.
+      </div>
+      <div class="flinks">
+        <a href="index.html">Residential</a>
+        <a href="commercial.html">Commercial</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="#estimate">Estimate</a>
+        <a href="https://ocpbuilders.com" target="_blank" rel="noopener">ocpbuilders.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll("[data-type]").forEach(function (a) {
+      a.addEventListener("click", function () {
+        document.getElementById("roof-type").value = a.getAttribute("data-type");
+      });
+    });
+    document.getElementById("lead").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var fail = document.getElementById("fail");
+      var ok = document.getElementById("ok");
+      fail.classList.remove("show");
+      ok.classList.remove("show");
+      var name = this.name.value.trim();
+      var phone = this.phone.value.trim();
+      var email = this.email.value.trim();
+      var type = this.type.value;
+      if (!name) { fail.textContent = "Add your name."; fail.classList.add("show"); return; }
+      if (!phone) { fail.textContent = "Add a phone we can reach."; fail.classList.add("show"); return; }
+      if (!email || email.indexOf("@") === -1) { fail.textContent = "That email does not look right."; fail.classList.add("show"); return; }
+      if (!type) { fail.textContent = "Pick a roof type, or Not sure."; fail.classList.add("show"); return; }
+      ok.classList.add("show");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
