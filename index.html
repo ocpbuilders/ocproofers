@@ -1,373 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OCP Roofing | Phoenix</title>
-  <meta name="description" content="OCP Roofing, a division of OCP Builders. Central Phoenix. Written price. We stand behind the work. Greater Phoenix, Maricopa, and Casa Grande.">
-  <link rel="icon" href="FAVICON.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCP Roofing | Phoenix Valley Roofing | Written Price. We Stand Behind It.</title>
+  <meta name="description" content="OCP Roofing, a division of OCP Builders. Central Phoenix. KB-1 Dual Building Contractor. Honest written prices for shingle, tile, foam, and metal. Greater Phoenix, Maricopa, Casa Grande.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #171611;
-      --paper: #ffffff;
-      --cream: #f5f3f0;
-      --taupe: #e8e4de;
-      --taupe-btn: #ddd8d1;
-      --taupe-hover: #d1cbc3;
-      --muted: #5a5753;
-      --line: #d5d0ca;
-      --navy: #1c2b4a;
-      --navy-dark: #141f36;
-      --flag-red: #a1291e;
-      --flag-gold: #f0a728;
+      --cream: #f7f4ee;
+      --paper: #faf8f5;
+      --white: #ffffff;
+      --sand: #e8dfd0;
+      --tan: #d4b896;
+      --terracotta: #b85c38;
+      --maroon: #6b2d3c;
+      --maroon-deep: #4a1e2a;
+      --charcoal: #1f1c19;
+      --ink: #2a2622;
+      --muted: #6b6560;
+      --line: #e5ddd2;
+      --soft: #f0ebe3;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Inter, Aptos, "Segoe UI", Arial, sans-serif;
-      color: var(--ink); background: var(--paper); line-height: 1.5;
+      font-family: Outfit, system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    h1, h2, h3, strong.display { font-family: Manrope, Inter, sans-serif; letter-spacing: -0.02em; }
-    img { max-width: 100%; display: block; }
+    h1, h2, h3, .serif { font-family: "Source Serif 4", Georgia, serif; font-weight: 600; letter-spacing: -0.02em; }
     a { color: inherit; text-decoration: none; }
-    button, input, select { font: inherit; color: inherit; }
-    :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+    img { max-width: 100%; display: block; }
+    button, input, select, textarea { font: inherit; color: inherit; }
 
-    header { background: var(--paper); position: sticky; top: 0; z-index: 40; }
-    .bar {
-      width: min(1280px, calc(100% - 48px));
-      margin: 0 auto; min-height: 76px;
-      display: grid; grid-template-columns: auto 1fr auto;
-      align-items: center; column-gap: 20px;
-    }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand img { height: 40px; width: 40px; object-fit: cover; border-radius: 3px; }
-    .brand strong { display: block; font-size: 26px; font-weight: 800; line-height: 1; }
-    .brand small { display: block; font-size: 11px; color: var(--muted); margin-top: 4px; }
-    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px; }
-    nav a { font-size: 15px; font-weight: 500; padding: 8px 12px; border-radius: 6px; }
-    nav a:hover { background: var(--cream); }
-    nav a.on { background: var(--taupe); font-weight: 600; }
-    .end { display: flex; align-items: center; gap: 14px; justify-content: flex-end; }
-    .place {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
-      white-space: nowrap; color: var(--ink);
-    }
-    .place:hover { color: var(--muted); }
-    .flag { width: 36px; height: 24px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0,0,0,.08); flex-shrink: 0; }
-    .menu-btn {
-      display: none; border: 1px solid var(--line); background: #fff;
-      padding: 8px 12px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;
-    }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
     .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      font-size: 15px; font-weight: 600; padding: 11px 18px;
-      border-radius: 6px; border: 0; cursor: pointer; white-space: nowrap;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 15px 26px; border-radius: 6px; font-weight: 600; font-size: 15px;
+      border: 0; cursor: pointer; transition: all 0.18s ease;
     }
-    .btn-taupe { background: var(--taupe-btn); }
-    .btn-taupe:hover { background: var(--taupe-hover); }
-    .btn-line { background: var(--paper); border: 1px solid var(--line); }
-    .btn-navy { background: var(--navy); color: #fff; }
-    .btn-navy:hover { background: var(--navy-dark); }
-    .stripe {
-      height: 5px;
-      background: linear-gradient(90deg, var(--flag-red) 0 33.33%, var(--flag-gold) 33.33% 66.66%, var(--navy) 66.66% 100%);
+    .btn-primary { background: var(--maroon); color: #fff; }
+    .btn-primary:hover { background: var(--maroon-deep); transform: translateY(-1px); }
+    .btn-secondary { background: var(--charcoal); color: #fff; }
+    .btn-secondary:hover { background: #0f0e0c; }
+    .btn-outline { background: transparent; border: 1.5px solid var(--charcoal); color: var(--charcoal); }
+    .btn-outline:hover { background: var(--charcoal); color: #fff; }
+    .btn-tan { background: var(--tan); color: var(--charcoal); }
+    .btn-tan:hover { background: #c9a882; }
+
+    header {
+      background: rgba(250, 248, 245, 0.96);
+      backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 50;
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 82px; gap: 32px;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .logo-mark {
+      width: 46px; height: 46px; background: var(--maroon); color: #fff;
+      display: grid; place-items: center; font-weight: 700; font-size: 16px;
+      border-radius: 4px; letter-spacing: -0.03em;
+    }
+    .logo-text { font-family: Outfit, sans-serif; font-size: 20px; font-weight: 700; line-height: 1.1; }
+    .logo-text span { display: block; font-size: 11px; font-weight: 500; color: var(--muted); margin-top: 2px; letter-spacing: 0.06em; text-transform: uppercase; }
+    nav { display: flex; gap: 4px; }
+    nav a { padding: 10px 16px; border-radius: 6px; font-weight: 500; font-size: 15px; }
+    nav a:hover { background: var(--soft); }
+    .header-right { display: flex; align-items: center; gap: 20px; }
+    .phone { font-weight: 700; font-size: 16.5px; color: var(--maroon); }
+    .phone:hover { text-decoration: underline; }
+    .flag { width: 32px; height: 21px; border-radius: 2px; }
+    .menu-toggle { display: none; background: none; border: 1px solid var(--line); padding: 10px 14px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+
+    .stripe { height: 3px; background: linear-gradient(90deg, #a1291e 0 30%, #e8b86d 30% 60%, var(--maroon) 60% 100%); }
+
+    .alert {
+      background: linear-gradient(90deg, var(--tan), #e8d4b8);
+      color: var(--charcoal); text-align: center;
+      padding: 11px 20px; font-size: 14.5px; font-weight: 500;
     }
 
-    .mono { background: var(--taupe); border-bottom: 1px solid var(--line); padding: 10px 16px; text-align: center; font-size: 14px; }
-    .hero { display: grid; grid-template-columns: minmax(280px, 0.9fr) 1.15fr; min-height: 440px; }
-    .copy { padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; }
-    .kicker { font-size: 18px; font-weight: 600; color: var(--muted); margin-bottom: 8px; }
-    h1 { font-size: clamp(52px, 8vw, 96px); font-weight: 800; letter-spacing: -0.03em; line-height: 0.9; }
-    h1::after { content: ""; display: block; width: 40%; height: 3px; background: var(--ink); margin-top: 12px; }
-    .lead { font-size: 19px; color: var(--muted); max-width: 480px; margin: 22px 0 10px; }
-    .second { font-size: 16px; color: var(--muted); max-width: 480px; margin-bottom: 28px; }
-    .photo { min-height: 440px; background: var(--taupe) center 38%/cover no-repeat; }
-
-    .systems { background: var(--taupe); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .row { width: min(1280px, 100%); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
-    .sys { padding: 34px 26px; background: none; border: 0; text-align: left; cursor: pointer; font: inherit; color: inherit; width: 100%; }
-    .sys + .sys { border-left: 1px solid var(--line); }
-    .sys:hover { background: var(--taupe-btn); }
-    .sys h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
-    .sys p { font-size: 14.5px; color: var(--muted); }
-
-    .estimate { width: min(1280px, calc(100% - 48px)); margin: 0 auto; padding: 56px 0; }
-    .eg { display: grid; grid-template-columns: 260px 1fr; gap: 32px; align-items: start; }
-    .estimate h2 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
-    .hint { color: var(--muted); font-size: 15px; }
-    form { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-    input, select {
-      border: 1px solid var(--line); background: #fff; padding: 13px 14px;
-      font-size: 15px; border-radius: 6px; min-width: 150px; flex: 1;
+    .hero {
+      padding: 80px 0 70px;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
     }
-    .note { margin-top: 12px; font-size: 13px; color: var(--muted); }
-    .ok, .fail { display: none; margin-top: 12px; padding: 14px; background: var(--taupe); border-radius: 6px; }
-    .ok.show, .fail.show { display: block; }
-    label.check { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: center; }
+    .kicker { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 14px; }
+    h1 { font-size: clamp(48px, 6vw, 72px); line-height: 0.92; margin-bottom: 20px; color: var(--charcoal); }
+    .lead { font-size: 20px; color: var(--muted); max-width: 500px; margin-bottom: 32px; font-weight: 400; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+    .trust { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; font-weight: 600; color: var(--muted); }
+    .trust span { display: flex; align-items: center; gap: 8px; }
+    .hero-photo {
+      border-radius: 8px; overflow: hidden; height: 520px;
+      background: #ddd center/cover no-repeat;
+      box-shadow: 0 30px 60px rgba(31, 28, 25, 0.15);
+      position: relative;
+    }
+    .hero-photo::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(31,28,25,0.25), transparent 40%);
+    }
 
-    .block { padding: 64px 24px; }
-    .band { background: var(--taupe); }
-    .wrap { width: min(1280px, 100%); margin: 0 auto; }
-    .block h2 { font-size: 28px; font-weight: 800; margin-bottom: 10px; }
-    .block p, .block .sub { margin-bottom: 14px; max-width: 720px; color: var(--muted); }
-    .four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 12px; }
-    .four strong { display: block; margin-bottom: 6px; }
-    .four p { font-size: 14.5px; max-width: none; }
-    .ghost { font-size: 48px; font-weight: 800; color: var(--ink); opacity: 0.08; line-height: 1; }
-    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
-    .slot { border: 1px solid var(--line); background: var(--paper); }
-    .slot figcaption { padding: 12px 16px; font-size: 14px; }
-    .cities { display: flex; flex-wrap: wrap; gap: 8px; }
-    .cities a, .cities span { border: 1px solid var(--line); padding: 6px 12px; border-radius: 6px; font-size: 14px; }
-    .cities a:hover { background: var(--taupe); }
+    .stats {
+      background: var(--charcoal); color: #fff; padding: 28px 0;
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+    .stat strong { display: block; font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+    .stat span { font-size: 13.5px; opacity: 0.75; }
 
-    footer { border-top: 1px solid var(--line); padding: 28px 24px 40px; font-size: 14px; color: var(--muted); }
-    .foot { width: min(1280px, 100%); margin: 0 auto; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-    footer a { text-decoration: underline; text-underline-offset: 3px; }
-    .flinks { display: flex; gap: 14px; flex-wrap: wrap; }
+    .materials { padding: 90px 0; }
+    .section-head { text-align: center; margin-bottom: 48px; max-width: 640px; margin-left: auto; margin-right: auto; }
+    .section-head h2 { font-size: 42px; margin-bottom: 12px; }
+    .section-head p { color: var(--muted); font-size: 17px; }
+    .mat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .mat-card {
+      background: var(--white); border-radius: 10px; overflow: hidden;
+      border: 1px solid var(--line); transition: 0.25s ease;
+    }
+    .mat-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(31,28,25,0.08); }
+    .mat-card img { width: 100%; height: 200px; object-fit: cover; }
+    .mat-card div { padding: 22px; }
+    .mat-card h3 { font-size: 22px; margin-bottom: 8px; }
+    .mat-card p { font-size: 15px; color: var(--muted); }
+
+    .process { padding: 90px 0; background: var(--cream); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 20px; }
+    .step { background: var(--white); padding: 28px 24px; border-radius: 10px; border: 1px solid var(--line); }
+    .step-num { font-family: "Source Serif 4", serif; font-size: 42px; color: var(--tan); line-height: 1; margin-bottom: 12px; }
+    .step h3 { font-size: 19px; margin-bottom: 8px; }
+    .step p { font-size: 15px; color: var(--muted); }
+
+    .why { padding: 90px 0; }
+    .why-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center; }
+    .why h2 { font-size: 40px; margin-bottom: 16px; }
+    .why p { margin-bottom: 18px; color: var(--muted); font-size: 16.5px; }
+    .why a { color: var(--maroon); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .why img { border-radius: 10px; height: 380px; width: 100%; object-fit: cover; }
+
+    .commercial {
+      padding: 70px 0; background: var(--maroon); color: #fff;
+    }
+    .comm-inner { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+    .commercial h2 { font-size: 36px; margin-bottom: 8px; }
+    .commercial p { opacity: 0.9; max-width: 520px; }
+
+    .gallery { padding: 90px 0; background: var(--cream); }
+    .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .proj { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+    .proj img { width: 100%; height: 240px; object-fit: cover; }
+    .proj figcaption { padding: 20px; }
+    .proj strong { display: block; font-size: 17px; margin-bottom: 6px; }
+    .proj span { font-size: 14.5px; color: var(--muted); }
+
+    .faq { padding: 90px 0; }
+    .faq-list { max-width: 760px; margin: 40px auto 0; }
+    .faq-item { border-bottom: 1px solid var(--line); padding: 20px 0; }
+    .faq-item h3 { font-size: 18px; margin-bottom: 8px; cursor: pointer; }
+    .faq-item p { color: var(--muted); font-size: 15.5px; }
+
+    .area { padding: 70px 0; background: var(--white); }
+    .cities { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 24px; }
+    .cities span {
+      background: var(--soft); padding: 9px 18px; border-radius: 24px;
+      font-size: 14.5px; font-weight: 500;
+    }
+
+    .estimate { padding: 90px 0; background: var(--cream); }
+    .est-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
+    form { display: grid; gap: 16px; background: var(--white); padding: 32px; border-radius: 12px; border: 1px solid var(--line); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    input, select, textarea {
+      width: 100%; padding: 15px 16px; border: 1.5px solid var(--line);
+      border-radius: 6px; background: var(--paper); font-size: 15px;
+    }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--maroon); border-color: transparent; background: #fff; }
+    .check { display: flex; align-items: center; gap: 10px; font-size: 15px; }
+    .form-note { font-size: 13.5px; color: var(--muted); }
+    .success { display: none; background: #f0f7f0; color: #2d5a2d; padding: 16px; border-radius: 6px; margin-top: 8px; }
+    .success.show { display: block; }
+
+    footer {
+      background: var(--charcoal); color: #d5cfc7; padding: 60px 0 36px;
+      font-size: 14.5px;
+    }
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    footer a { color: #fff; }
+    footer a:hover { color: var(--tan); }
+    .foot-links { display: flex; flex-direction: column; gap: 10px; }
+    .division { font-size: 13.5px; opacity: 0.75; margin-top: 14px; line-height: 1.5; }
+    .bottom { border-top: 1px solid #3a3530; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13px; }
 
     @media (max-width: 980px) {
-      .bar { width: calc(100% - 32px); grid-template-columns: 1fr auto auto; }
-      .menu-btn { display: inline-flex; }
-      nav { display: none; }
-      nav.open {
-        display: flex; flex-direction: column; grid-column: 1 / -1;
-        padding: 8px 0 16px; align-items: stretch;
-      }
-      nav.open a { padding: 12px; }
-      .hero { grid-template-columns: 1fr; }
-      .copy { padding: 36px 20px 24px; }
-      .photo { min-height: 260px; }
-      .row, .four, .projects { grid-template-columns: 1fr 1fr; }
-      .sys + .sys { border-left: 0; border-top: 1px solid var(--line); }
-      .eg { grid-template-columns: 1fr; }
-      .estimate { width: calc(100% - 40px); }
+      .menu-toggle { display: block; }
+      nav { display: none; position: absolute; top: 82px; left: 0; right: 0; background: var(--paper); flex-direction: column; padding: 16px 24px 24px; border-bottom: 1px solid var(--line); }
+      nav.open { display: flex; }
+      .hero-grid, .why-grid, .est-grid, .comm-inner { grid-template-columns: 1fr; }
+      .hero-photo { height: 360px; }
+      .mat-grid, .steps, .proj-grid, .stats-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .header-right .phone { display: none; }
+      .foot-grid { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 620px) {
-      .row, .four, .projects { grid-template-columns: 1fr; }
-      h1 { font-size: 52px; }
-      .place span { display: none; }
+    @media (max-width: 640px) {
+      .mat-grid, .steps, .proj-grid, .stats-grid, .foot-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 42px; }
+      .hero { padding: 56px 0 48px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="bar">
-      <a class="brand" href="index.html">
-        <img src="ocp-mark.png" alt="OCP" onerror="this.onerror=null;this.src='ocp-mark.png.png'">
-        <span>
-          <strong>Roofing</strong>
-          <small>A division of OCP Builders</small>
-        </span>
+    <div class="wrap topbar">
+      <a class="brand" href="#top">
+        <div class="logo-mark">OCP</div>
+        <div class="logo-text">Roofing<span>A division of OCP Builders</span></div>
       </a>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <button class="menu-toggle" aria-label="Menu">Menu</button>
       <nav id="nav">
-        <a class="on" href="index.html">Residential</a>
-        <a href="commercial.html">Commercial</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
+        <a href="#materials">Residential</a>
+        <a href="#commercial">Commercial</a>
+        <a href="#gallery">Projects</a>
+        <a href="#why">About</a>
+        <a href="#estimate">Contact</a>
       </nav>
-      <div class="end">
-        <a class="place" href="phoenix.html">
-          <svg class="flag" viewBox="0 0 120 80" aria-hidden="true">
-            <rect width="120" height="80" fill="#1c2b4a"/>
-            <polygon fill="#a1291e" points="60,40 0,40 0,0"/>
-            <polygon fill="#f0a728" points="60,40 0,0 20,0"/>
-            <polygon fill="#a1291e" points="60,40 20,0 40,0"/>
-            <polygon fill="#f0a728" points="60,40 40,0 60,0"/>
-            <polygon fill="#a1291e" points="60,40 60,0 80,0"/>
-            <polygon fill="#f0a728" points="60,40 80,0 100,0"/>
-            <polygon fill="#a1291e" points="60,40 100,0 120,0"/>
-            <polygon fill="#f0a728" points="60,40 120,0 120,40"/>
-            <path d="M60 26 l4.7 14.5h15.3l-12.4 9 4.7 14.5-12.3-9-12.3 9 4.7-14.5-12.4-9h15.3Z" fill="#b3742a"/>
-          </svg>
-          <span>Phoenix</span>
-        </a>
-        <a class="btn btn-line" href="#estimate">Get Estimate</a>
+      <div class="header-right">
+        <a class="phone" href="tel:6025550199">(602) 555-0199</a>
+        <svg class="flag" viewBox="0 0 120 80" aria-hidden="true">
+          <rect width="120" height="80" fill="#1c2b4a"/>
+          <polygon fill="#a1291e" points="60,40 0,40 0,0"/>
+          <polygon fill="#f0a728" points="60,40 0,0 20,0"/>
+          <polygon fill="#a1291e" points="60,40 20,0 40,0"/>
+          <polygon fill="#f0a728" points="60,40 40,0 60,0"/>
+          <polygon fill="#a1291e" points="60,40 60,0 80,0"/>
+          <polygon fill="#f0a728" points="60,40 80,0 100,0"/>
+          <polygon fill="#a1291e" points="60,40 100,0 120,0"/>
+          <polygon fill="#f0a728" points="60,40 120,0 120,40"/>
+          <path d="M60 26 l4.7 14.5h15.3l-12.4 9 4.7 14.5-12.3-9-12.3 9 4.7-14.5-12.4-9h15.3Z" fill="#b3742a"/>
+        </svg>
+        <a class="btn btn-primary" href="#estimate">Get Estimate</a>
       </div>
     </div>
     <div class="stripe"></div>
   </header>
 
-  <p class="mono">Late monsoon. If it is actively leaking, write leak on the form. We will tell you same day or next morning before we hang up.</p>
+  <div class="alert">
+    <strong>Monsoon season.</strong> Actively leaking? Mark it on the form. We call the same day or first thing next morning.
+  </div>
 
   <section class="hero" id="top">
-    <div class="copy">
-      <div class="kicker">OCP Roofing</div>
-      <h1>Phoenix</h1>
-      <p class="lead">We get on the roof fast, give you a written price, and stand behind the work.</p>
-      <p class="second">We keep the job moving, and we cover our work if we miss something.</p>
-      <div><a class="btn btn-taupe" href="#estimate">Get Estimate</a></div>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">Central Phoenix · Valley Wide</div>
+        <h1>Written price.<br>We stand behind the work.</h1>
+        <p class="lead">We get on the roof, give you a clear number for a clear scope, and come back if something we should have caught fails. No storm-crew games.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#estimate">Get Your Estimate</a>
+          <a class="btn btn-outline" href="tel:6025550199">Call (602) 555-0199</a>
+        </div>
+        <div class="trust">
+          <span>✓ KB-1 Dual Building Contractor</span>
+          <span>✓ Licensed · Bonded · Insured</span>
+          <span>✓ In-house crew</span>
+        </div>
+      </div>
+      <div class="hero-photo" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')"></div>
     </div>
-    <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1800&q=80')"></div>
   </section>
 
-  <section class="systems" id="systems">
-    <div class="row">
-      <button class="sys" type="button" data-type="Shingle">
-        <h2>Shingle</h2>
-        <p>Inspect after storms and around year 10–15. Replace when tabs curl, granules are gone, or leaks stack up.</p>
-      </button>
-      <button class="sys" type="button" data-type="Tile">
-        <h2>Tile</h2>
-        <p>The tile lasts. The felt under it does not. Most Valley jobs are a re-felt, not a pretty tear-off.</p>
-      </button>
-      <button class="sys" type="button" data-type="Foam">
-        <h2>Foam</h2>
-        <p>Recoat when it chalks. Inspect after monsoon, before it is a tear-off.</p>
-      </button>
-      <button class="sys" type="button" data-type="Metal">
-        <h2>Metal</h2>
-        <p>It leaks at flashing and screws, not in the middle.</p>
-      </button>
+  <section class="stats">
+    <div class="wrap stats-grid">
+      <div class="stat"><strong>KB-1</strong><span>Dual Building Contractor</span></div>
+      <div class="stat"><strong>Valley</strong><span>Greater Phoenix to Casa Grande</span></div>
+      <div class="stat"><strong>Written</strong><span>Price for a written scope</span></div>
+      <div class="stat"><strong>In-house</strong><span>Same crew that builds</span></div>
+    </div>
+  </section>
+
+  <section class="materials" id="materials">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we put on roofs</h2>
+        <p>Shingle, tile, foam, and metal. We tell you which one actually fits the house and the Valley weather.</p>
+      </div>
+      <div class="mat-grid">
+        <article class="mat-card">
+          <img src="https://images.unsplash.com/photo-1590365876016-da05ac533e83?auto=format&fit=crop&w=800&q=80" alt="Asphalt shingle roof">
+          <div>
+            <h3>Shingle</h3>
+            <p>Inspect after storms and around year 10–15. Replace when tabs curl or granules disappear. Straightforward for most Valley homes.</p>
+          </div>
+        </article>
+        <article class="mat-card">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Clay tile roof">
+          <div>
+            <h3>Tile</h3>
+            <p>The tile lasts decades. The felt underneath does not. Most jobs here are a re-felt and reset, not a full tear-off.</p>
+          </div>
+        </article>
+        <article class="mat-card">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Flat roof">
+          <div>
+            <h3>Foam</h3>
+            <p>Recoat when it chalks. Catch it after monsoon before it becomes a full replacement. Strong on low-slope sections.</p>
+          </div>
+        </article>
+        <article class="mat-card">
+          <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=800&q=80" alt="Metal roof">
+          <div>
+            <h3>Metal</h3>
+            <p>Leaks show up at flashing and fasteners, not in the field. Clean lines and long life when detailed correctly.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Four steps. No mystery.</h2>
+        <p>You reach out. We get on the roof. You get a written price. We do the work and walk it with you.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>You reach out</h3>
+          <p>Form or phone. Tell us residential or commercial and what’s happening.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>We get on the roof</h3>
+          <p>We inspect it ourselves. Photos of the actual problem stay with you.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Written price</h3>
+          <p>Scope, materials, timeline, total. That number is for that scope. No extras after you approve.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3>Work and walkthrough</h3>
+          <p>Clean site. Final walkthrough. Warranty paper in your hand before we leave.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap why-grid">
+      <div>
+        <h2>A roofing division, not a storm crew.</h2>
+        <p>OCP Roofing is a division of <a href="https://ocpbuilders.com" target="_blank" rel="noopener">OCP Builders</a>. We work out of central Phoenix. KB-1 Dual Building Contractor — residential and full commercial.</p>
+        <p>You get a written number for a written scope. We keep the price competitive and on paper. If our work fails or we missed something we should have seen, we come back and make it right. Manufacturer warranties stay with the product. Our labor is ours.</p>
+        <p>Same crew that builds and remodels also handles the roofs. No fly-by-night storm chasers.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Roof work in progress">
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial" id="commercial">
+    <div class="wrap comm-inner">
+      <div>
+        <h2>Commercial is the second door.</h2>
+        <p>Leaks, coatings, low-slope, metal, reroof, and roofs on buildings we are already constructing. Same written price. Same crew that comes back.</p>
+      </div>
+      <a class="btn btn-tan" href="#estimate">Get a commercial estimate</a>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Recent work</h2>
+        <p>Shingle, tile re-felt, and commercial. Photos update as jobs finish.</p>
+      </div>
+      <div class="proj-grid">
+        <figure class="proj">
+          <img src="https://images.unsplash.com/photo-1590365876016-da05ac533e83?auto=format&fit=crop&w=900&q=80" alt="Shingle roof Phoenix">
+          <figcaption><strong>Asphalt shingle · Phoenix</strong><span>Architectural shingles, full replacement, clean ridges and valleys.</span></figcaption>
+        </figure>
+        <figure class="proj">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80" alt="Tile roof Valley">
+          <figcaption><strong>Tile re-felt · Valley</strong><span>Lifted, underlayment replaced, tiles reset. Most tile jobs here.</span></figcaption>
+        </figure>
+        <figure class="proj">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Commercial roof">
+          <figcaption><strong>Commercial / low-slope · Valley</strong><span>Coating and detail work on flat sections. Same standard as residential.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Do you charge to inspect?</h3>
+          <p>No. We inspect at no fee. You get photos and a written number before anyone pulls a shingle.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if the roof is leaking right now?</h3>
+          <p>Mark it on the form. We prioritize active leaks and call the same day or first thing the next morning.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Are you a storm crew?</h3>
+          <p>No. We’re a division of OCP Builders. Same crew that builds and remodels handles the roofs. We stand behind the work.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you handle commercial?</h3>
+          <p>Yes. KB-1 Dual Building Contractor. Low-slope, coatings, metal, reroofs, and roofs on buildings we’re already constructing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Based in central Phoenix. We run the Valley.</h2>
+        <p>Greater Phoenix, Maricopa, and Casa Grande.</p>
+      </div>
+      <div class="cities">
+        <span>Phoenix</span><span>Tempe</span><span>Mesa</span><span>Chandler</span><span>Gilbert</span>
+        <span>Scottsdale</span><span>Glendale</span><span>Peoria</span><span>Surprise</span><span>Goodyear</span>
+        <span>Avondale</span><span>Buckeye</span><span>Queen Creek</span><span>Tolleson</span><span>Laveen</span>
+        <span>Ahwatukee</span><span>Maricopa</span><span>Casa Grande</span>
+      </div>
     </div>
   </section>
 
   <section class="estimate" id="estimate">
-    <div class="eg">
+    <div class="wrap est-grid">
       <div>
-        <h2>Get Your Estimate</h2>
-        <p class="hint">Name, phone, email, roof type. We call you back with a written price.</p>
+        <h2 style="font-size:40px; margin-bottom:16px;">Get your estimate</h2>
+        <p style="color:var(--muted); margin-bottom:20px; font-size:17px;">Name, phone, email, and roof type. We call you back with a written price. No fee to inspect. We don’t start work without a written scope you approved.</p>
+        <p style="font-size:15.5px; font-weight:600;">Leaks: mark the box. We’ll tell you same day or next morning.</p>
       </div>
-      <form id="lead" novalidate>
-        <input type="text" name="name" placeholder="Full Name" autocomplete="name" required>
-        <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" required>
-        <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
-        <select name="type" id="roof-type" required>
-          <option value="" selected disabled>Roofing Type</option>
+      <form id="lead">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Full name" required>
+          <input type="tel" name="phone" placeholder="Phone" required>
+        </div>
+        <input type="email" name="email" placeholder="Email" required>
+        <select name="type" required>
+          <option value="" disabled selected>Roof type</option>
           <option>Shingle</option>
           <option>Tile</option>
           <option>Foam</option>
           <option>Metal</option>
           <option>Not sure</option>
+          <option>Commercial / low-slope</option>
         </select>
+        <textarea name="notes" rows="3" placeholder="What’s going on? (optional)"></textarea>
         <label class="check"><input type="checkbox" name="leak"> Actively leaking</label>
-        <button class="btn btn-navy" type="submit">Get Estimate</button>
+        <button class="btn btn-primary" type="submit">Get Estimate</button>
+        <p class="form-note">We read the form and call. Photos and a written number before anyone pulls a shingle.</p>
+        <div class="success" id="success">Got it. We’ll call you back about the roof.</div>
       </form>
-    </div>
-    <p class="note">No fee to inspect. We don’t start work without a written scope you approved.</p>
-    <div class="ok" id="ok">Got it. We will call you back about the roof.</div>
-    <div class="fail" id="fail"></div>
-  </section>
-
-  <section class="block band">
-    <div class="wrap">
-      <h2>Four steps. No mystery.</h2>
-      <p class="sub">You reach out. We get on the roof. You get a written price. We do the work and walk it.</p>
-      <div class="four">
-        <div><div class="ghost">1</div><strong>You reach out</strong><p>Call or the form. Tell us residential or commercial and what is going on.</p></div>
-        <div><div class="ghost">2</div><strong>We get on the roof</strong><p>We inspect it ourselves. Photos of the problem stay with you.</p></div>
-        <div><div class="ghost">3</div><strong>Written price</strong><p>Scope, materials, timeline, total. That is the number for that scope.</p></div>
-        <div><div class="ghost">4</div><strong>Work and walkthrough</strong><p>Clean site. Walkthrough. Warranty paper before we leave.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <h2>A roofing division, not a storm crew.</h2>
-      <p>OCP Roofing is a division of <a href="https://ocpbuilders.com" target="_blank" rel="noopener">OCP Builders</a>. We work out of central Phoenix. Licensed, bonded, and insured.</p>
-      <p>We keep pricing honest. You get a written number for a written scope. We keep the price competitive and on paper. No surprise extras after you approve the scope.</p>
-      <p>If our work fails, or we missed something we should have seen, we come back and make it right. That is the warranty: our labor, the scope we signed, no runaround. Manufacturer material warranties stay with the product.</p>
-      <p><a class="btn btn-line" href="about.html">About OCP Roofing</a></p>
-    </div>
-  </section>
-
-  <section class="block band">
-    <div class="wrap">
-      <h2>Commercial is the second door.</h2>
-      <p>KB-1 Dual Building Contractor. Leaks, coatings, low-slope, metal, reroof, and roofs on buildings we are already constructing. Same written price. Same crew that comes back.</p>
-      <p><a class="btn btn-navy" href="commercial.html">Get a commercial estimate</a></p>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <h2>What happens next</h2>
-      <p>We read the form. We call. We set the inspection. You get photos and a written number before anyone pulls a shingle.</p>
-      <p>Leaks: say so on the form. We will tell you if it is next morning or same day.</p>
-    </div>
-  </section>
-
-  <section class="block band">
-    <div class="wrap">
-      <h2>Recent work</h2>
-      <p class="sub">Shingle first. Tile, foam, and commercial as the photos land.</p>
-      <div class="projects">
-        <figure class="slot"><figcaption><strong>Asphalt shingle · Phoenix</strong><br>Photos of finished jobs go here. Shingle first.</figcaption></figure>
-        <figure class="slot"><figcaption><strong>Tile re-felt · Valley</strong><br>Photos of finished jobs go here. Shingle first.</figcaption></figure>
-        <figure class="slot"><figcaption><strong>Commercial / flat · Valley</strong><br>Photos of finished jobs go here. Shingle first.</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <h2>Based in central Phoenix. We run the Valley.</h2>
-      <p>Greater Phoenix, Maricopa, and Casa Grande.</p>
-      <div class="cities">
-        <a href="phoenix.html">Phoenix</a><a href="phoenix.html">Tempe</a><a href="phoenix.html">Mesa</a><a href="phoenix.html">Chandler</a><a href="phoenix.html">Gilbert</a><a href="phoenix.html">Scottsdale</a><a href="phoenix.html">Glendale</a><a href="phoenix.html">Peoria</a><a href="phoenix.html">Surprise</a><a href="phoenix.html">Goodyear</a><a href="phoenix.html">Avondale</a><a href="phoenix.html">Buckeye</a><a href="phoenix.html">Queen Creek</a><a href="phoenix.html">Tolleson</a><a href="phoenix.html">Laveen</a><a href="phoenix.html">Ahwatukee</a><a href="phoenix.html">Maricopa</a><a href="phoenix.html">Casa Grande</a>
-      </div>
     </div>
   </section>
 
   <footer>
-    <div class="foot">
-      <div>
-        OCP Roofing is a division of <a href="https://ocpbuilders.com" target="_blank" rel="noopener">OCP Builders</a>.<br>
-        Licensed, Bonded &amp; Insured.<br>
-        Central Phoenix.
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="logo-text" style="color:#fff; font-size:20px; font-family:Outfit,sans-serif;">OCP Roofing</div>
+          <p class="division">A division of <a href="https://ocpbuilders.com" target="_blank" rel="noopener">OCP Builders</a><br>Licensed, Bonded & Insured · KB-1 Dual Building Contractor<br>Central Phoenix</p>
+        </div>
+        <div class="foot-links">
+          <a href="#materials">Residential</a>
+          <a href="#commercial">Commercial</a>
+          <a href="#gallery">Projects</a>
+          <a href="#why">About</a>
+        </div>
+        <div class="foot-links">
+          <a href="#estimate">Get Estimate</a>
+          <a href="tel:6025550199">(602) 555-0199</a>
+          <a href="https://ocpbuilders.com" target="_blank" rel="noopener">ocpbuilders.com</a>
+        </div>
+        <div class="foot-links">
+          <span>Greater Phoenix</span>
+          <span>Maricopa</span>
+          <span>Casa Grande</span>
+        </div>
       </div>
-      <div class="flinks">
-        <a href="index.html">Residential</a>
-        <a href="commercial.html">Commercial</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="phoenix.html">Phoenix</a>
-        <a href="#estimate">Estimate</a>
-        <a href="https://ocpbuilders.com" target="_blank" rel="noopener">ocpbuilders.com</a>
+      <div class="bottom">
+        <span>© OCP Roofing. All rights reserved.</span>
+        <span>Written price. We stand behind the work.</span>
       </div>
     </div>
   </footer>
 
   <script>
-    var menu = document.querySelector(".menu-btn");
-    var nav = document.getElementById("nav");
-    if (menu && nav) {
-      menu.addEventListener("click", function () {
-        var open = nav.classList.toggle("open");
-        menu.setAttribute("aria-expanded", open ? "true" : "false");
-      });
+    const menuBtn = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('nav');
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
     }
-    document.querySelectorAll(".sys").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var sel = document.getElementById("roof-type");
-        sel.value = btn.getAttribute("data-type");
-        document.getElementById("estimate").scrollIntoView({ behavior: "smooth" });
-      });
-    });
-    document.getElementById("lead").addEventListener("submit", function (e) {
+    document.getElementById('lead').addEventListener('submit', function(e) {
       e.preventDefault();
-      var fail = document.getElementById("fail");
-      var ok = document.getElementById("ok");
-      fail.classList.remove("show");
-      ok.classList.remove("show");
-      var name = this.name.value.trim();
-      var phone = this.phone.value.trim();
-      var email = this.email.value.trim();
-      var type = this.type.value;
-      if (!name) { fail.textContent = "Add your name."; fail.classList.add("show"); return; }
-      if (!phone) { fail.textContent = "Add a phone we can reach."; fail.classList.add("show"); return; }
-      if (!email || email.indexOf("@") === -1) { fail.textContent = "That email does not look right."; fail.classList.add("show"); return; }
-      if (!type) { fail.textContent = "Pick a roof type, or Not sure."; fail.classList.add("show"); return; }
-      ok.classList.add("show");
+      document.getElementById('success').classList.add('show');
       this.reset();
+      setTimeout(() => document.getElementById('success').classList.remove('show'), 6000);
     });
   </script>
 </body>
