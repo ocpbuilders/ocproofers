@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OCP Roofing | Phoenix Valley Roofing | Written Price. We Stand Behind It.</title>
-  <meta name="description" content="OCP Roofing, a division of OCP Builders. Central Phoenix. KB-1 Dual Building Contractor. Honest written prices for shingle, tile, foam, and metal. Greater Phoenix, Maricopa, Casa Grande.">
+  <title>OCP Roofing | Phoenix Valley | Dedicated Roofing Contractor</title>
+  <meta name="description" content="OCP Roofing, a division of OCP Builders. Central Phoenix. Dedicated roofing contractor for new roofs, re-roofs, and repairs. Greater Phoenix, Maricopa, Casa Grande. KB-1 Dual Building Contractor.">
+  <link rel="icon" href="ocp-mark.png.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --cream: #f7f4ee;
-      --paper: #faf8f5;
-      --white: #ffffff;
-      --sand: #e8dfd0;
-      --tan: #d4b896;
-      --terracotta: #b85c38;
-      --maroon: #6b2d3c;
-      --maroon-deep: #4a1e2a;
-      --charcoal: #1f1c19;
-      --ink: #2a2622;
-      --muted: #6b6560;
-      --line: #e5ddd2;
-      --soft: #f0ebe3;
+      --greige: #e8e4de;
+      --paper: #f2efe9;
+      --white: #f7f5f1;
+      --sand: #ddd6cc;
+      --tan: #c9b08a;
+      --brown: #7a5c45;
+      --brown-dark: #5f4635;
+      --charcoal: #3a3632;
+      --ink: #2f2b27;
+      --muted: #6d675f;
+      --line: #d5cec4;
+      --soft: #e4ddd3;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -44,17 +44,17 @@
       padding: 15px 26px; border-radius: 6px; font-weight: 600; font-size: 15px;
       border: 0; cursor: pointer; transition: all 0.18s ease;
     }
-    .btn-primary { background: var(--maroon); color: #fff; }
-    .btn-primary:hover { background: var(--maroon-deep); transform: translateY(-1px); }
+    .btn-primary { background: var(--brown); color: #fff; }
+    .btn-primary:hover { background: var(--brown-dark); transform: translateY(-1px); }
     .btn-secondary { background: var(--charcoal); color: #fff; }
-    .btn-secondary:hover { background: #0f0e0c; }
+    .btn-secondary:hover { background: #2a2724; }
     .btn-outline { background: transparent; border: 1.5px solid var(--charcoal); color: var(--charcoal); }
     .btn-outline:hover { background: var(--charcoal); color: #fff; }
     .btn-tan { background: var(--tan); color: var(--charcoal); }
-    .btn-tan:hover { background: #c9a882; }
+    .btn-tan:hover { background: #b89a72; }
 
     header {
-      background: rgba(250, 248, 245, 0.96);
+      background: rgba(242, 239, 233, 0.96);
       backdrop-filter: blur(12px);
       position: sticky; top: 0; z-index: 50;
       border-bottom: 1px solid var(--line);
@@ -65,116 +65,115 @@
     }
     .brand { display: flex; align-items: center; gap: 14px; }
     .logo-mark {
-      width: 46px; height: 46px; background: var(--maroon); color: #fff;
-      display: grid; place-items: center; font-weight: 700; font-size: 16px;
-      border-radius: 4px; letter-spacing: -0.03em;
+      width: 46px; height: 46px; object-fit: contain; border-radius: 4px; background: #6b2d3c;
     }
-    .logo-text { font-family: Outfit, sans-serif; font-size: 20px; font-weight: 700; line-height: 1.1; }
-    .logo-text span { display: block; font-size: 11px; font-weight: 500; color: var(--muted); margin-top: 2px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .logo-text { font-family: Outfit, sans-serif; font-size: 22px; font-weight: 800; line-height: 1; }
+    .logo-text span { display: block; font-size: 11px; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .logo-text a { color: var(--muted); font-weight: 500; }
+    .logo-text a:hover { color: var(--brown); }
     nav { display: flex; gap: 4px; }
     nav a { padding: 10px 16px; border-radius: 6px; font-weight: 500; font-size: 15px; }
     nav a:hover { background: var(--soft); }
     .header-right { display: flex; align-items: center; gap: 20px; }
-    .phone { font-weight: 700; font-size: 16.5px; color: var(--maroon); }
+    .phone { font-weight: 700; font-size: 16.5px; color: var(--brown); }
     .phone:hover { text-decoration: underline; }
     .flag { width: 32px; height: 21px; border-radius: 2px; }
     .menu-toggle { display: none; background: none; border: 1px solid var(--line); padding: 10px 14px; border-radius: 6px; font-weight: 600; cursor: pointer; }
 
-    .stripe { height: 3px; background: linear-gradient(90deg, #a1291e 0 30%, #e8b86d 30% 60%, var(--maroon) 60% 100%); }
+    .stripe { height: 3px; background: linear-gradient(90deg, #a1291e 0 30%, #e8b86d 30% 60%, var(--brown) 60% 100%); }
 
     .alert {
-      background: linear-gradient(90deg, var(--tan), #e8d4b8);
-      color: var(--charcoal); text-align: center;
+      background: var(--sand); color: var(--charcoal); text-align: center;
       padding: 11px 20px; font-size: 14.5px; font-weight: 500;
     }
 
     .hero {
       padding: 80px 0 70px;
-      background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+      background: var(--greige);
     }
     .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: center; }
-    .kicker { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 14px; }
-    h1 { font-size: clamp(48px, 6vw, 72px); line-height: 0.92; margin-bottom: 20px; color: var(--charcoal); }
-    .lead { font-size: 20px; color: var(--muted); max-width: 500px; margin-bottom: 32px; font-weight: 400; }
+    .kicker { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown); margin-bottom: 14px; }
+    h1 { font-size: clamp(44px, 5.5vw, 64px); line-height: 0.95; margin-bottom: 20px; color: var(--charcoal); }
+    .lead { font-size: 19px; color: var(--muted); max-width: 500px; margin-bottom: 32px; font-weight: 400; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
     .trust { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; font-weight: 600; color: var(--muted); }
     .trust span { display: flex; align-items: center; gap: 8px; }
     .hero-photo {
-      border-radius: 8px; overflow: hidden; height: 520px;
+      border-radius: 8px; overflow: hidden; height: 500px;
       background: #ddd center/cover no-repeat;
-      box-shadow: 0 30px 60px rgba(31, 28, 25, 0.15);
-      position: relative;
-    }
-    .hero-photo::after {
-      content: ""; position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(31,28,25,0.25), transparent 40%);
+      box-shadow: 0 24px 48px rgba(58, 54, 50, 0.1);
     }
 
     .stats {
       background: var(--charcoal); color: #fff; padding: 28px 0;
     }
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
-    .stat strong { display: block; font-size: 28px; font-weight: 700; margin-bottom: 4px; }
-    .stat span { font-size: 13.5px; opacity: 0.75; }
+    .stat strong { display: block; font-size: 20px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
+    .stat span { font-size: 13.5px; opacity: 0.8; font-weight: 400; }
 
-    .materials { padding: 90px 0; }
-    .section-head { text-align: center; margin-bottom: 48px; max-width: 640px; margin-left: auto; margin-right: auto; }
-    .section-head h2 { font-size: 42px; margin-bottom: 12px; }
+    .materials { padding: 90px 0; background: var(--paper); }
+    .section-head { text-align: center; margin-bottom: 48px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .section-head h2 { font-size: 40px; margin-bottom: 12px; }
     .section-head p { color: var(--muted); font-size: 17px; }
     .mat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
     .mat-card {
       background: var(--white); border-radius: 10px; overflow: hidden;
       border: 1px solid var(--line); transition: 0.25s ease;
     }
-    .mat-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(31,28,25,0.08); }
-    .mat-card img { width: 100%; height: 200px; object-fit: cover; }
+    .mat-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(58,54,50,0.07); }
+    .mat-card img { width: 100%; height: 190px; object-fit: cover; }
     .mat-card div { padding: 22px; }
-    .mat-card h3 { font-size: 22px; margin-bottom: 8px; }
-    .mat-card p { font-size: 15px; color: var(--muted); }
+    .mat-card h3 { font-size: 20px; margin-bottom: 8px; }
+    .mat-card p { font-size: 14.5px; color: var(--muted); }
 
-    .process { padding: 90px 0; background: var(--cream); }
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 20px; }
+    .process { padding: 90px 0; background: var(--greige); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 20px; }
     .step { background: var(--white); padding: 28px 24px; border-radius: 10px; border: 1px solid var(--line); }
-    .step-num { font-family: "Source Serif 4", serif; font-size: 42px; color: var(--tan); line-height: 1; margin-bottom: 12px; }
-    .step h3 { font-size: 19px; margin-bottom: 8px; }
+    .step-num { font-family: "Source Serif 4", serif; font-size: 40px; color: var(--tan); line-height: 1; margin-bottom: 12px; }
+    .step h3 { font-size: 18px; margin-bottom: 8px; }
     .step p { font-size: 15px; color: var(--muted); }
 
-    .why { padding: 90px 0; }
+    .why { padding: 90px 0; background: var(--paper); }
     .why-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center; }
-    .why h2 { font-size: 40px; margin-bottom: 16px; }
+    .why h2 { font-size: 38px; margin-bottom: 16px; }
     .why p { margin-bottom: 18px; color: var(--muted); font-size: 16.5px; }
-    .why a { color: var(--maroon); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-    .why img { border-radius: 10px; height: 380px; width: 100%; object-fit: cover; }
+    .why a { color: var(--brown); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .why img { border-radius: 10px; height: 360px; width: 100%; object-fit: cover; }
+
+    .insurance {
+      padding: 70px 0; background: var(--soft);
+    }
+    .insurance-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .insurance h2 { font-size: 34px; margin-bottom: 12px; }
+    .insurance p { color: var(--muted); font-size: 16.5px; }
 
     .commercial {
-      padding: 70px 0; background: var(--maroon); color: #fff;
+      padding: 70px 0; background: var(--charcoal); color: #fff;
     }
     .comm-inner { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
-    .commercial h2 { font-size: 36px; margin-bottom: 8px; }
-    .commercial p { opacity: 0.9; max-width: 520px; }
+    .commercial h2 { font-size: 34px; margin-bottom: 8px; }
+    .commercial p { opacity: 0.9; max-width: 540px; }
 
-    .gallery { padding: 90px 0; background: var(--cream); }
+    .gallery { padding: 90px 0; background: var(--greige); }
     .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
     .proj { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
-    .proj img { width: 100%; height: 240px; object-fit: cover; }
-    .proj figcaption { padding: 20px; }
-    .proj strong { display: block; font-size: 17px; margin-bottom: 6px; }
+    .proj img { width: 100%; height: 230px; object-fit: cover; }
+    .proj figcaption { padding: 18px 20px; }
+    .proj strong { display: block; font-size: 16.5px; margin-bottom: 4px; }
     .proj span { font-size: 14.5px; color: var(--muted); }
 
-    .faq { padding: 90px 0; }
-    .faq-list { max-width: 760px; margin: 40px auto 0; }
-    .faq-item { border-bottom: 1px solid var(--line); padding: 20px 0; }
-    .faq-item h3 { font-size: 18px; margin-bottom: 8px; cursor: pointer; }
+    .faq { padding: 80px 0; background: var(--paper); }
+    .faq-list { max-width: 740px; margin: 36px auto 0; }
+    .faq-item { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq-item h3 { font-size: 17.5px; margin-bottom: 6px; }
     .faq-item p { color: var(--muted); font-size: 15.5px; }
 
     .area { padding: 70px 0; background: var(--white); }
-    .cities { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 24px; }
-    .cities span {
-      background: var(--soft); padding: 9px 18px; border-radius: 24px;
-      font-size: 14.5px; font-weight: 500;
-    }
+    .area-inner { text-align: center; max-width: 640px; margin: 0 auto; }
+    .area h2 { font-size: 34px; margin-bottom: 10px; }
+    .area p { color: var(--muted); font-size: 17px; }
 
-    .estimate { padding: 90px 0; background: var(--cream); }
+    .estimate { padding: 90px 0; background: var(--greige); }
     .est-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
     form { display: grid; gap: 16px; background: var(--white); padding: 32px; border-radius: 12px; border: 1px solid var(--line); }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -182,9 +181,9 @@
       width: 100%; padding: 15px 16px; border: 1.5px solid var(--line);
       border-radius: 6px; background: var(--paper); font-size: 15px;
     }
-    input:focus, select:focus, textarea:focus { outline: 2px solid var(--maroon); border-color: transparent; background: #fff; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--brown); border-color: transparent; background: #fff; }
     .check { display: flex; align-items: center; gap: 10px; font-size: 15px; }
-    .form-note { font-size: 13.5px; color: var(--muted); }
+    .form-note { font-size: 13.5px; color: var(--muted); margin-top: 4px; }
     .success { display: none; background: #f0f7f0; color: #2d5a2d; padding: 16px; border-radius: 6px; margin-top: 8px; }
     .success.show { display: block; }
 
@@ -197,14 +196,14 @@
     footer a:hover { color: var(--tan); }
     .foot-links { display: flex; flex-direction: column; gap: 10px; }
     .division { font-size: 13.5px; opacity: 0.75; margin-top: 14px; line-height: 1.5; }
-    .bottom { border-top: 1px solid #3a3530; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+    .bottom { border-top: 1px solid #4a4540; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13px; }
 
     @media (max-width: 980px) {
       .menu-toggle { display: block; }
       nav { display: none; position: absolute; top: 82px; left: 0; right: 0; background: var(--paper); flex-direction: column; padding: 16px 24px 24px; border-bottom: 1px solid var(--line); }
       nav.open { display: flex; }
       .hero-grid, .why-grid, .est-grid, .comm-inner { grid-template-columns: 1fr; }
-      .hero-photo { height: 360px; }
+      .hero-photo { height: 340px; }
       .mat-grid, .steps, .proj-grid, .stats-grid { grid-template-columns: 1fr 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .header-right .phone { display: none; }
@@ -212,7 +211,7 @@
     }
     @media (max-width: 640px) {
       .mat-grid, .steps, .proj-grid, .stats-grid, .foot-grid { grid-template-columns: 1fr; }
-      h1 { font-size: 42px; }
+      h1 { font-size: 40px; }
       .hero { padding: 56px 0 48px; }
     }
   </style>
@@ -221,8 +220,8 @@
   <header>
     <div class="wrap topbar">
       <a class="brand" href="#top">
-        <div class="logo-mark">OCP</div>
-        <div class="logo-text">Roofing<span>A division of OCP Builders</span></div>
+        <img class="logo-mark" src="ocp-mark.png.png" alt="OCP">
+        <div class="logo-text">Roofing<span><a href="https://ocpbuilders.com" target="_blank" rel="noopener">A division of OCP Builders</a></span></div>
       </a>
       <button class="menu-toggle" aria-label="Menu">Menu</button>
       <nav id="nav">
@@ -233,7 +232,7 @@
         <a href="#estimate">Contact</a>
       </nav>
       <div class="header-right">
-        <a class="phone" href="tel:6025550199">(602) 555-0199</a>
+        <a class="phone" href="tel:6234766576">(623) 476-6576</a>
         <svg class="flag" viewBox="0 0 120 80" aria-hidden="true">
           <rect width="120" height="80" fill="#1c2b4a"/>
           <polygon fill="#a1291e" points="60,40 0,40 0,0"/>
@@ -253,23 +252,23 @@
   </header>
 
   <div class="alert">
-    <strong>Monsoon season.</strong> Actively leaking? Mark it on the form. We call the same day or first thing next morning.
+    <strong>Monsoon season.</strong> Actively leaking? Call us or mark it on the form. We respond the same business day or the following.
   </div>
 
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div>
-        <div class="kicker">Central Phoenix · Valley Wide</div>
-        <h1>Written price.<br>We stand behind the work.</h1>
-        <p class="lead">We get on the roof, give you a clear number for a clear scope, and come back if something we should have caught fails. No storm-crew games.</p>
+        <div class="kicker">Proudly serving Maricopa County</div>
+        <h1>We are a dedicated<br>roofing contractor.</h1>
+        <p class="lead">New roofs, re-roofs, and repairs. We do a clear written price for a clear scope and stand behind the work.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#estimate">Get Your Estimate</a>
-          <a class="btn btn-outline" href="tel:6025550199">Call (602) 555-0199</a>
+          <a class="btn btn-outline" href="tel:6234766576">Call (623) 476-6576</a>
         </div>
         <div class="trust">
           <span>✓ KB-1 Dual Building Contractor</span>
-          <span>✓ Licensed · Bonded · Insured</span>
-          <span>✓ In-house crew</span>
+          <span>✓ Licensed, Bonded & Insured</span>
+          <span>✓ Written scope and price</span>
         </div>
       </div>
       <div class="hero-photo" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')"></div>
@@ -279,45 +278,45 @@
   <section class="stats">
     <div class="wrap stats-grid">
       <div class="stat"><strong>KB-1</strong><span>Dual Building Contractor</span></div>
-      <div class="stat"><strong>Valley</strong><span>Greater Phoenix to Casa Grande</span></div>
-      <div class="stat"><strong>Written</strong><span>Price for a written scope</span></div>
-      <div class="stat"><strong>In-house</strong><span>Same crew that builds</span></div>
+      <div class="stat"><strong>Licensed</strong><span>Bonded and insured</span></div>
+      <div class="stat"><strong>Written Scope</strong><span>Clear price for the work</span></div>
+      <div class="stat"><strong>Central Phoenix</strong><span>Serving the Valley</span></div>
     </div>
   </section>
 
   <section class="materials" id="materials">
     <div class="wrap">
       <div class="section-head">
-        <h2>What we put on roofs</h2>
-        <p>Shingle, tile, foam, and metal. We tell you which one actually fits the house and the Valley weather.</p>
+        <h2>Roofing systems we install</h2>
+        <p>Shingle, tile, foam, and metal. We help you choose what fits your home and the Valley climate.</p>
       </div>
       <div class="mat-grid">
         <article class="mat-card">
           <img src="https://images.unsplash.com/photo-1590365876016-da05ac533e83?auto=format&fit=crop&w=800&q=80" alt="Asphalt shingle roof">
           <div>
             <h3>Shingle</h3>
-            <p>Inspect after storms and around year 10–15. Replace when tabs curl or granules disappear. Straightforward for most Valley homes.</p>
+            <p>Most homes built in the last 15–20 years have shingles that are near or past typical warranty life. UV and heat in the Valley accelerate wear. We inspect for curling, granule loss, and hidden damage, then give you a clear path for repair or full replacement.</p>
           </div>
         </article>
         <article class="mat-card">
           <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Clay tile roof">
           <div>
             <h3>Tile</h3>
-            <p>The tile lasts decades. The felt underneath does not. Most jobs here are a re-felt and reset, not a full tear-off.</p>
+            <p>The tile itself can last decades. The underlayment beneath it is what usually fails first in Arizona heat. We lift the tile, replace the felt or underlayment, and reset it so the system performs again without a full tear-off.</p>
           </div>
         </article>
         <article class="mat-card">
-          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Flat roof">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Foam roof">
           <div>
             <h3>Foam</h3>
-            <p>Recoat when it chalks. Catch it after monsoon before it becomes a full replacement. Strong on low-slope sections.</p>
+            <p>Foam roofs need periodic recoating when the surface chalks or cracks. Catching it after monsoon season keeps water out and extends the life of the system. We inspect the coating and the seams so you know exactly what is needed.</p>
           </div>
         </article>
         <article class="mat-card">
           <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=800&q=80" alt="Metal roof">
           <div>
             <h3>Metal</h3>
-            <p>Leaks show up at flashing and fasteners, not in the field. Clean lines and long life when detailed correctly.</p>
+            <p>Metal roofs last a long time when the flashing and fasteners are detailed correctly. Most leaks happen at penetrations and transitions, not in the field of the panels. We install and repair standing seam and other metal systems with the details that hold up in the Valley.</p>
           </div>
         </article>
       </div>
@@ -334,17 +333,17 @@
         <div class="step">
           <div class="step-num">01</div>
           <h3>You reach out</h3>
-          <p>Form or phone. Tell us residential or commercial and what’s happening.</p>
+          <p>Call or use the form. Tell us if it is a new roof, re-roof, or repair, and what is happening.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
           <h3>We get on the roof</h3>
-          <p>We inspect it ourselves. Photos of the actual problem stay with you.</p>
+          <p>We inspect it ourselves. Photos of the actual condition stay with you.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
           <h3>Written price</h3>
-          <p>Scope, materials, timeline, total. That number is for that scope. No extras after you approve.</p>
+          <p>Scope, materials, timeline, and total. That number is for that scope.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
@@ -359,21 +358,28 @@
     <div class="wrap why-grid">
       <div>
         <h2>A roofing division, not a storm crew.</h2>
-        <p>OCP Roofing is a division of <a href="https://ocpbuilders.com" target="_blank" rel="noopener">OCP Builders</a>. We work out of central Phoenix. KB-1 Dual Building Contractor — residential and full commercial.</p>
-        <p>You get a written number for a written scope. We keep the price competitive and on paper. If our work fails or we missed something we should have seen, we come back and make it right. Manufacturer warranties stay with the product. Our labor is ours.</p>
-        <p>Same crew that builds and remodels also handles the roofs. No fly-by-night storm chasers.</p>
+        <p>OCP Roofing is a division of <a href="https://ocpbuilders.com" target="_blank" rel="noopener">OCP Builders</a>. We work out of central Phoenix. KB-1 Dual Building Contractor for residential and commercial work.</p>
+        <p>We are dedicated to installing; new roofing, re-roofing, and repairs. You get a written number for a written scope. If our work fails or we missed something we should have seen, we come back and make it right. Manufacturer warranties stay with the product. Our labor is ours.</p>
+        <p>No fly-by-night storm crews. We document the work and stand behind it.</p>
       </div>
       <div>
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Roof work in progress">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Roof work">
       </div>
+    </div>
+  </section>
+
+  <section class="insurance">
+    <div class="wrap insurance-inner">
+      <h2>Insurance claims</h2>
+      <p>We work with homeowners and their insurance companies on covered claims from storm, hail, wind, and other events. We document the damage, communicate clearly with the adjuster, and handle the roofing portion of the job so the process stays straightforward.</p>
     </div>
   </section>
 
   <section class="commercial" id="commercial">
     <div class="wrap comm-inner">
       <div>
-        <h2>Commercial is the second door.</h2>
-        <p>Leaks, coatings, low-slope, metal, reroof, and roofs on buildings we are already constructing. Same written price. Same crew that comes back.</p>
+        <h2>Commercial roofing</h2>
+        <p>Leaks, coatings, low-slope systems, metal, and full reroofs. Same written price and the same standard of work we use on residential jobs.</p>
       </div>
       <a class="btn btn-tan" href="#estimate">Get a commercial estimate</a>
     </div>
@@ -383,20 +389,20 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Recent work</h2>
-        <p>Shingle, tile re-felt, and commercial. Photos update as jobs finish.</p>
+        <p>Shingle, tile, and low-slope projects. Photos update as jobs finish.</p>
       </div>
       <div class="proj-grid">
         <figure class="proj">
-          <img src="https://images.unsplash.com/photo-1590365876016-da05ac533e83?auto=format&fit=crop&w=900&q=80" alt="Shingle roof Phoenix">
-          <figcaption><strong>Asphalt shingle · Phoenix</strong><span>Architectural shingles, full replacement, clean ridges and valleys.</span></figcaption>
+          <img src="https://images.unsplash.com/photo-1590365876016-da05ac533e83?auto=format&fit=crop&w=900&q=80" alt="Shingle roof">
+          <figcaption><strong>Asphalt shingle</strong><span>Full replacement with clean ridges and valleys.</span></figcaption>
         </figure>
         <figure class="proj">
-          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80" alt="Tile roof Valley">
-          <figcaption><strong>Tile re-felt · Valley</strong><span>Lifted, underlayment replaced, tiles reset. Most tile jobs here.</span></figcaption>
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80" alt="Tile roof">
+          <figcaption><strong>Tile re-felt</strong><span>Underlayment replaced and tiles reset.</span></figcaption>
         </figure>
         <figure class="proj">
           <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Commercial roof">
-          <figcaption><strong>Commercial / low-slope · Valley</strong><span>Coating and detail work on flat sections. Same standard as residential.</span></figcaption>
+          <figcaption><strong>Low-slope coating</strong><span>Coating and detail work on flat sections.</span></figcaption>
         </figure>
       </div>
     </div>
@@ -414,41 +420,33 @@
         </div>
         <div class="faq-item">
           <h3>What if the roof is leaking right now?</h3>
-          <p>Mark it on the form. We prioritize active leaks and call the same day or first thing the next morning.</p>
+          <p>Call us at (623) 476-6576 or mark it on the form. We prioritize active leaks and respond the same business day or the following.</p>
         </div>
         <div class="faq-item">
-          <h3>Are you a storm crew?</h3>
-          <p>No. We’re a division of OCP Builders. Same crew that builds and remodels handles the roofs. We stand behind the work.</p>
+          <h3>Do you work with insurance?</h3>
+          <p>Yes. We document damage, work with the adjuster, and handle the roofing portion of covered claims.</p>
         </div>
         <div class="faq-item">
           <h3>Do you handle commercial?</h3>
-          <p>Yes. KB-1 Dual Building Contractor. Low-slope, coatings, metal, reroofs, and roofs on buildings we’re already constructing.</p>
+          <p>Yes. KB-1 Dual Building Contractor. Low-slope, coatings, metal, and reroofs.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="area">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Based in central Phoenix. We run the Valley.</h2>
-        <p>Greater Phoenix, Maricopa, and Casa Grande.</p>
-      </div>
-      <div class="cities">
-        <span>Phoenix</span><span>Tempe</span><span>Mesa</span><span>Chandler</span><span>Gilbert</span>
-        <span>Scottsdale</span><span>Glendale</span><span>Peoria</span><span>Surprise</span><span>Goodyear</span>
-        <span>Avondale</span><span>Buckeye</span><span>Queen Creek</span><span>Tolleson</span><span>Laveen</span>
-        <span>Ahwatukee</span><span>Maricopa</span><span>Casa Grande</span>
-      </div>
+    <div class="wrap area-inner">
+      <h2>Based in central Phoenix</h2>
+      <p>Serving Greater Phoenix, Maricopa, and Casa Grande.</p>
     </div>
   </section>
 
   <section class="estimate" id="estimate">
     <div class="wrap est-grid">
       <div>
-        <h2 style="font-size:40px; margin-bottom:16px;">Get your estimate</h2>
-        <p style="color:var(--muted); margin-bottom:20px; font-size:17px;">Name, phone, email, and roof type. We call you back with a written price. No fee to inspect. We don’t start work without a written scope you approved.</p>
-        <p style="font-size:15.5px; font-weight:600;">Leaks: mark the box. We’ll tell you same day or next morning.</p>
+        <h2 style="font-size:38px; margin-bottom:16px;">Get your estimate</h2>
+        <p style="color:var(--muted); margin-bottom:20px; font-size:17px;">Name, phone, email, and roof type. Responses are within the same business day or the following. No fee to inspect. We don’t start work without a written scope you approved.</p>
+        <p style="font-size:15.5px; font-weight:600;">Actively leaking? Call (623) 476-6576 or mark it below.</p>
       </div>
       <form id="lead">
         <div class="form-row">
@@ -468,8 +466,8 @@
         <textarea name="notes" rows="3" placeholder="What’s going on? (optional)"></textarea>
         <label class="check"><input type="checkbox" name="leak"> Actively leaking</label>
         <button class="btn btn-primary" type="submit">Get Estimate</button>
-        <p class="form-note">We read the form and call. Photos and a written number before anyone pulls a shingle.</p>
-        <div class="success" id="success">Got it. We’ll call you back about the roof.</div>
+        <p class="form-note">We read the form and respond. Photos and a written number before anyone pulls a shingle.</p>
+        <div class="success" id="success">Got it. We’ll respond about the roof.</div>
       </form>
     </div>
   </section>
@@ -489,7 +487,7 @@
         </div>
         <div class="foot-links">
           <a href="#estimate">Get Estimate</a>
-          <a href="tel:6025550199">(602) 555-0199</a>
+          <a href="tel:6234766576">(623) 476-6576</a>
           <a href="https://ocpbuilders.com" target="_blank" rel="noopener">ocpbuilders.com</a>
         </div>
         <div class="foot-links">
@@ -500,7 +498,7 @@
       </div>
       <div class="bottom">
         <span>© OCP Roofing. All rights reserved.</span>
-        <span>Written price. We stand behind the work.</span>
+        <span>Dedicated roofing. Written price. We stand behind the work.</span>
       </div>
     </div>
   </footer>
