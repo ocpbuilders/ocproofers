@@ -64,7 +64,7 @@
       height: 82px; gap: 32px;
     }
     .brand { display: flex; align-items: center; gap: 12px; }
-    .brand img { height: 40px; width: 40px; object-fit: contain; border-radius: 3px; }
+    .brand img { height: 48px; width: 48px; object-fit: contain; border-radius: 4px; }
     .logo-text strong { display: block; font-size: 26px; font-weight: 800; line-height: 1; font-family: Outfit, sans-serif; }
     .logo-text small { display: block; font-size: 11px; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 0.02em; text-transform: uppercase; }
     .logo-text a { color: var(--muted); }
@@ -102,12 +102,15 @@
       box-shadow: 0 24px 48px rgba(58, 54, 50, 0.1);
     }
 
-    .stats {
-      background: var(--charcoal); color: #fff; padding: 28px 0;
-    }
-    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
-    .stat strong { display: block; font-size: 20px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
-    .stat span { font-size: 13.5px; opacity: 0.8; font-weight: 400; }
+    .hail-warning { padding: 70px 0; background: var(--charcoal); color: #fff; }
+    .hail-warning .section-head h2, .hail-warning .section-head p { color: #fff; }
+    .hail-warning .section-head p { opacity: 0.85; }
+    .hail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .hail-card { background: rgba(255,255,255,0.06); border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+    .hail-card img { width: 100%; height: 200px; object-fit: cover; }
+    .hail-card div { padding: 20px; }
+    .hail-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .hail-card p { font-size: 14.5px; opacity: 0.85; }
 
     .materials { padding: 90px 0; background: var(--paper); }
     .section-head { text-align: center; margin-bottom: 48px; max-width: 680px; margin-left: auto; margin-right: auto; }
@@ -202,13 +205,13 @@
       nav.open { display: flex; }
       .hero-grid, .why-grid, .est-grid, .comm-inner { grid-template-columns: 1fr; }
       .hero-photo { height: 340px; }
-      .mat-grid, .steps, .proj-grid, .stats-grid { grid-template-columns: 1fr 1fr; }
+      .mat-grid, .steps, .proj-grid, .hail-grid { grid-template-columns: 1fr 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .header-right .phone { display: none; }
       .foot-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 640px) {
-      .mat-grid, .steps, .proj-grid, .stats-grid, .foot-grid { grid-template-columns: 1fr; }
+      .mat-grid, .steps, .proj-grid, .hail-grid, .foot-grid { grid-template-columns: 1fr; }
       h1 { font-size: 40px; }
       .hero { padding: 56px 0 48px; }
     }
@@ -276,12 +279,35 @@
     </div>
   </section>
 
-  <section class="stats">
-    <div class="wrap stats-grid">
-      <div class="stat"><strong>KB-1</strong><span>Dual Building Contractor</span></div>
-      <div class="stat"><strong>Licensed</strong><span>Bonded and insured</span></div>
-      <div class="stat"><strong>Written Scope</strong><span>Clear price for the work</span></div>
-      <div class="stat"><strong>Central Phoenix</strong><span>Serving the Valley</span></div>
+  <section class="hail-warning">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom: 32px;">
+        <h2>Recent hail in the Valley</h2>
+        <p>Golf-ball sized hail hit parts of the metro. Here’s what it looks like and what it means for your roof.</p>
+      </div>
+      <div class="hail-grid">
+        <div class="hail-card">
+          <img src="hail-size.png" alt="Golf ball sized hail next to ruler">
+          <div>
+            <h3>Golf-ball sized hail</h3>
+            <p>Hail this size hits hard enough to bruise shingles, crack tiles, and dent metal. The damage is not always obvious from the ground.</p>
+          </div>
+        </div>
+        <div class="hail-card">
+          <img src="hail-shingles.png" alt="Hail damage on asphalt shingles">
+          <div>
+            <h3>How it looks</h3>
+            <p>Dark spots where granules are gone, bruised or cracked shingles, and displaced tiles. Water gets under those spots even if it is not leaking inside yet.</p>
+          </div>
+        </div>
+        <div class="hail-card">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Water damage and mold risk">
+          <div>
+            <h3>What it means</h3>
+            <p>Once water gets under the shingles it soaks the deck and insulation. That leads to mold, rot, and higher repair costs later. Most policies cover the hail damage if it is documented correctly. We handle the inspection, photos, and the roofing work with your adjuster.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
